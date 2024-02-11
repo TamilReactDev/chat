@@ -76,12 +76,19 @@ const Search = () => {
 
   }
 
+   const handleClick = () => {
+    if(!userName) return;
+    handleSearch();
+  }
+
+
   
 
   return (
     <div className='search'>
-      <div className='searchForm'>
+      <div className='searchForm d-flex justify-content-between'>
         <input type="text" placeholder='Search here after Enter' value={userName} onKeyDown={handleDown} onChange={handleChange} />
+         <button className='btn btn-primary' onClick={handleClick}>go</button>
       </div>
       {user && user.uid !== currentUser.uid  && <div className='userChat' onClick={handleChat}>
         <img src={user.photoUrl} alt="" />
