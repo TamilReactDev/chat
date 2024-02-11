@@ -49,7 +49,7 @@ const Search = () => {
 
     dispatch({type:'CHANGE_USER',payload:{name:user.name,photoUrl:user.photoUrl,uid:user.uid}});
 
-    const combinedId = currentUser.uid > user.uid ? currentUser.uid + user.uid : user.id + currentUser.uid;
+    const combinedId = currentUser.uid > user.uid ? currentUser.uid + user.uid : user.uid + currentUser.uid;
 
     const chat = await getDoc(doc(db, "chat", combinedId));
    
